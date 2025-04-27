@@ -1,4 +1,4 @@
-// console.log(printVariables(1, 2, 3)); // works correctly because of hoisting of function declaration.
+console.log(printVariables(1, 2, 3)); // works correctly because of hoisting of function declaration.
 
 function printVariables(value1, value2, value3 = 7) {
   var localVar = 3;
@@ -11,7 +11,7 @@ function printVariables(value1, value2, value3 = 7) {
   return [value1, value2, value3];
 }
 
-// console.log(printVariables2(2, 3, 4, 5)); // Error, because the variable printVariables2 is hoisted but uninitialized so it is undefined
+console.log(printVariables2(2, 3, 4, 5)); // Error, because the variable printVariables2 is hoisted but uninitialized so it is undefined
 
 var printVariables2 = (value21, value22, value23 = 7) => {
   var localVar = 3;
