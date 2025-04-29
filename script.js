@@ -23,6 +23,20 @@ button.onclick = () => {
   }, 100);
 };
 
+// Task "2"
+console.log(document.getElementsByTagName("img")); // returns an HTML collection containing the images (Method 1)
+console.log(document.images); // returns an HTML collection containing the images (Method 2)
+
+const city = document.getElementById("city");
+console.log(city.options);
+
+const table = document.getElementsByTagName("table")[1];
+const rows = table.rows;
+console.log(rows);
+
+const elements = document.getElementsByClassName("fontBlue BGrey");
+console.log(elements);
+
 // Task "4"
 setInterval(() => {
   document.title = new Date().toLocaleString();
