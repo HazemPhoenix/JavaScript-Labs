@@ -27,3 +27,11 @@ function commonElements(arr1, arr2) {
   const result = arr1.filter((el) => arr2.includes(el));
   return result;
 }
+
+function removeDuplicates(nums) {
+  let result = [];
+  for (let num of nums) {
+    if (!result.includes(num)) result.push(num);
+  }
+  return result;
+}
