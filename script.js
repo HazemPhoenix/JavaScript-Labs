@@ -1,4 +1,5 @@
 const button = document.getElementsByTagName("button")[0];
+const submit = document.getElementById("submit");
 let smallWindow;
 
 button.onclick = () => {
@@ -21,3 +22,22 @@ button.onclick = () => {
     scrollValue += 1000;
   }, 100);
 };
+
+// Task "4"
+setInterval(() => {
+  document.title = new Date().toLocaleString();
+}, 1000);
+
+const str = location.search.substring(1);
+if (str) {
+  const arr = str.split("&");
+  const name = arr[0].split("=")[1];
+  const age = arr[1].split("=")[1];
+
+  const obj = {
+    name,
+    age,
+  };
+
+  console.log(obj);
+}
