@@ -1,7 +1,7 @@
 const button = document.getElementsByTagName("button")[0];
 let smallWindow;
 
-button.addEventListener("click", () => {
+button.onclick = () => {
   smallWindow = window.open(
     "./smallWindow.html",
     parent,
@@ -16,7 +16,8 @@ button.addEventListener("click", () => {
     if (innerHeight + smallWindow.scrollY > scrollHeight) {
       clearInterval(int);
       smallWindow.close();
+      smallWindow.document.write("Hazem"); // doesn't work because the window is closed
     }
     scrollValue += 1000;
   }, 100);
-});
+};
