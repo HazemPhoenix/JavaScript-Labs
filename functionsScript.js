@@ -22,3 +22,8 @@ function sortString(str) {
     .sort((a, b) => a.charCodeAt(0) - b.charCodeAt(0))
     .join("");
 }
+
+function commonElements(arr1, arr2) {
+  const result = arr1.filter((el) => arr2.includes(el));
+  return result;
+}
