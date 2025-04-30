@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lab 4</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+      #container {
+        margin: auto;
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 1em;
+        box-shadow: 0 0 20px black;
+        border-radius: 1em;
+      }
+
+      #buttons-container {
+        padding: 1em;
+        display: flex;
+        gap: 1em;
+      }
+
+      button {
+        font-size: 1.3em;
+        padding: 1em;
+        border: none;
+        border-radius: 0.5em;
+        cursor: pointer;
+        background-color: black;
+        color: lightgray;
+        transition: 300ms;
+      }
+
+      button:hover {
+        background-color: lightgray;
+        color: black;
+      }
+
+      #img-container {
+        border: 5px solid rgb(0, 0, 0);
+        border-radius: 1em;
+        width: 100%;
+        height: fit-content;
+        overflow: hidden;
+      }
+      img {
+        width: 100%;
+      }
+
+      .disabled {
+        background-color: lightgray;
+        color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <div id="img-container">
+        <img src="./images/1.jpg" />
+      </div>
+      <div id="buttons-container">
+        <button id="stop">Stop Slideshow</button>
+        <button id="prev">Previous</button>
+        <button id="next">Next</button>
+        <button id="start">Start Slideshow</button>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
