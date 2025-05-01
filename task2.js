@@ -18,7 +18,9 @@ sort.options[sort.options.selectedIndex].value;
 let students = [
   { name: "Hazem", grade: 100, dept: "OS" },
   { name: "Steven", grade: 90, dept: "OS" },
-  { name: "Ali", grade: 60, dept: "SD" },
+  { name: "Ali", grade: 76, dept: "SD" },
+  { name: "Essam", grade: 75, dept: "SD" },
+  { name: "Wael", grade: 60, dept: "SD" },
   { name: "Moamen", grade: 0, dept: "EL" },
   { name: "Seif", grade: 50, dept: "EL" },
 ];
@@ -104,8 +106,9 @@ const validateAndAdd = (event) => {
     svg.addEventListener("click", deleteStudent);
 
     let color = "";
-    if (student.grade > 80) color = "#90EE90";
-    else if (student.grade >= 60) color = "#FFFFC5";
+    if (student.grade >= 76) color = "#90EE90";
+    else if (student.grade >= 61) color = "#FFFFC5";
+    else if (student.grade == 60) color = "#FF8C00";
     else color = "#FF8488";
 
     newRow.style.backgroundColor = color;
@@ -134,8 +137,9 @@ const listStudents = (s) => {
     const newRow = document.createElement("tr");
     const capitalizedName = stud.name[0].toUpperCase() + stud.name.slice(1);
     let color = "";
-    if (stud.grade > 80) color = "#90EE90";
-    else if (stud.grade >= 60) color = "#FFFFC5";
+    if (stud.grade >= 76) color = "#90EE90";
+    else if (stud.grade >= 61) color = "#FFFFC5";
+    else if (stud.grade == 60) color = "#FF8C00";
     else color = "#FF8488";
 
     newRow.innerHTML = `
