@@ -52,7 +52,7 @@ const markAsDone = (event) => {
   }
 };
 
-const listTask = (task) => {
+const listTask = (task, index) => {
   const newRow = document.createElement("tr");
   newRow.innerHTML = `
     <td><input type="checkbox" name="" id="" /></td>
@@ -67,11 +67,13 @@ const listTask = (task) => {
   const checkbox = newRow.querySelector('input[type="checkbox"');
   svg.addEventListener("click", deleteTask);
   checkbox.addEventListener("click", markAsDone);
+  if (index % 2 != 0) newRow.style.backgroundColor = "lightgray";
+
   body.appendChild(newRow);
 };
 
-tasks.forEach((task) => {
-  listTask(task);
+tasks.forEach((task, idx) => {
+  listTask(task, idx);
 });
 
 const isValid = (t) => {
@@ -105,7 +107,7 @@ const addTask = () => {
     hideError();
     clearInput();
     tasks.push(newTask);
-    listTask(newTask);
+    listTask(newTask, tasks.length - 1);
   }
 };
 
