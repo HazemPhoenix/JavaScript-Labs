@@ -18,13 +18,15 @@ class Car extends Engine {
   #direction = "right";
   #node;
   #width;
-  constructor(t, l, i, w = 200) {
+  #speed;
+  constructor(t, l, i, w = 200, s = 10) {
     super();
     this.#top = t;
     this.#left = l;
     this.#imgSrc = i;
     this.#width = w;
     this.#node = document.createElement("img");
+    this.#speed = s;
     document.body.appendChild(this.#node);
     this.renderCar();
   }
@@ -51,13 +53,13 @@ class Car extends Engine {
 
   moveRight() {
     this.#direction = "right";
-    this.#left += 10;
+    this.#left += 5;
     this.renderCar();
   }
 
   moveLeft() {
     this.#direction = "left";
-    if (this.#left > 0) this.#left -= 10;
+    if (this.#left > 0) this.#left -= 5;
     this.renderCar();
   }
 
@@ -76,7 +78,7 @@ class Car extends Engine {
         }
         this.moveLeft();
       }
-    }, 10);
+    }, this.#speed);
   }
 
   renderCar() {
@@ -98,8 +100,8 @@ class Car extends Engine {
 }
 
 let car1 = new Car(50, 0, "./images/car-free-svg-cut-file-1.png", 300);
-let car2 = new Car(300, 0, "./images/car-free-svg-cut-file-1.png", 250);
-let car3 = new Car(600, 0, "./images/car-free-svg-cut-file-1.png", 200);
+let car2 = new Car(300, 0, "./images/car-free-svg-cut-file-1.png", 250, 5);
+let car3 = new Car(600, 0, "./images/car-free-svg-cut-file-1.png", 250, 1);
 
 car1.moveCar("right");
 car2.moveCar("right");
