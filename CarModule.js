@@ -1,6 +1,7 @@
 export class Car {
   #model;
   #year;
+
   constructor(m, y) {
     this.#model = m;
     this.#year = y;
