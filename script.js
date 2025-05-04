@@ -1,29 +1,36 @@
 class Engine {
-  constructor() {
+  #imgSrc;
+  constructor(s) {
     if (new.target.name == "Engine")
       throw new Error("This class cannot be instaniated");
-
+    this.#imgSrc = s;
     Engine.#count++;
   }
   static #count = 0;
   getCount() {
     return Engine.#count;
   }
+
+  setImg(s) {
+    this.#imgSrc = s;
+  }
+
+  getImg() {
+    return this.#imgSrc;
+  }
 }
 
 class Car extends Engine {
   #top;
   #left;
-  #imgSrc;
   #direction = "right";
   #node;
   #width;
   #speed;
   constructor(t, l, i, w = 200, s = 10) {
-    super();
+    super(i);
     this.#top = t;
     this.#left = l;
-    this.#imgSrc = i;
     this.#width = w;
     this.#node = document.createElement("img");
     this.#speed = s;
@@ -45,10 +52,6 @@ class Car extends Engine {
 
   getLeft() {
     return this.#left;
-  }
-
-  setImg(src) {
-    this.#imgSrc = src;
   }
 
   moveRight() {
@@ -83,7 +86,7 @@ class Car extends Engine {
 
   renderCar() {
     document.body.removeChild(this.#node);
-    this.#node.src = this.#imgSrc;
+    this.#node.src = this.getImg();
     this.#node.setAttribute("width", `${this.#width}`);
     this.#node.style.position = "absolute";
     this.#node.style.top = `${this.#top}px`;
