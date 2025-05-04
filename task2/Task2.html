@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lab 6 - Task 2</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+      #userTable {
+        width: 60%;
+        margin: auto;
+        margin-top: 50px;
+        border-collapse: collapse;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+      }
+      thead {
+        background-color: rgb(35, 150, 196);
+        color: white;
+      }
+      td,
+      th {
+        border: 2px solid white;
+        text-align: center;
+        transition: 0.3s;
+      }
+      th {
+        padding: 10px;
+      }
+
+      .address-geo {
+        width: 100%;
+        border-collapse: collapse;
+      }
+
+      .address-geo tr td {
+        border: 1px solid black;
+        width: 50%;
+        padding: 8px;
+      }
+      .address-geo tr td:first-child {
+        background-color: rgba(0, 0, 0, 0.349);
+        font-weight: bold;
+        color: white;
+      }
+
+      td:hover {
+        background-color: rgba(0, 0, 0, 0.349);
+        color: white;
+      }
+
+      @keyframes throb {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.05);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+
+      #userTable {
+        animation: throb 5s infinite;
+      }
+    </style>
+  </head>
+  <body>
+    <table id="userTable">
+      <thead>
+        <tr>
+          <th>Username</th>
+          <th>Email</th>
+          <th>Company Name</th>
+          <th>Address Geo</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+    <script src="Task2.js"></script>
+  </body>
+</html>
